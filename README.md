@@ -17,7 +17,7 @@ dependencies {
 
 You can make a channel between main thread and worker thread easily.
 
-```
+```java
 channel = new Channel(new Channel.UiCallback() {
     @Override
     public boolean handleUiMessage(Message msg) {
@@ -46,7 +46,7 @@ channel.toUI().sendEmptyMessage(PING);
 
 If you use AndroidChannel, You can make Timer more easily. I already make Timer class for you. You can just use it. If you want to know how to implement Timer class, you just read [souce code](https://github.com/skyfe79/AndroidChannel/blob/master/androidchannel/src/main/java/kr/pe/burt/android/lib/androidchannel/Timer.java) in the package.
 
-```
+```java
 timer = new Timer(1000, new Timer.OnTimer() {
     int count = 0;
     @Override
@@ -60,7 +60,7 @@ timer.start();
 
 You can also stop the timer like this.
 
-```
+```java
 @Override
 public boolean onTouchEvent(MotionEvent event) {
     if(event.getAction() == MotionEvent.ACTION_UP) {
