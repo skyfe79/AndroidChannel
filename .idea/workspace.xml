@@ -54,9 +54,18 @@
       <file leaf-file-name="Timer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/androidchannel/src/main/java/kr/pe/burt/android/lib/androidchannel/Timer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60761">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.7859691">
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+              <folding>
+                <element signature="e#980#1556#0" expanded="true" />
+                <element signature="e#1555#1556#0" expanded="true" />
+                <element signature="e#2021#2022#0" expanded="true" />
+                <element signature="e#2085#2086#0" expanded="true" />
+                <element signature="e#2111#2112#0" expanded="true" />
+                <element signature="e#2174#2175#0" expanded="true" />
+                <element signature="e#2222#2223#0" expanded="true" />
+                <element signature="e#2262#2263#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2356,8 +2365,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/androidchannel/src/main/java/kr/pe/burt/android/lib/androidchannel/Timer.java" />
         <option value="$PROJECT_DIR$/androidchannel/build.gradle" />
+        <option value="$PROJECT_DIR$/androidchannel/src/main/java/kr/pe/burt/android/lib/androidchannel/Timer.java" />
       </list>
     </option>
   </component>
@@ -2756,9 +2765,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/androidchannel/src/main/java/kr/pe/burt/android/lib/androidchannel/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60761">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.7859691">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="e#980#1556#0" expanded="true" />
+            <element signature="e#1555#1556#0" expanded="true" />
+            <element signature="e#2021#2022#0" expanded="true" />
+            <element signature="e#2085#2086#0" expanded="true" />
+            <element signature="e#2111#2112#0" expanded="true" />
+            <element signature="e#2174#2175#0" expanded="true" />
+            <element signature="e#2222#2223#0" expanded="true" />
+            <element signature="e#2262#2263#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
