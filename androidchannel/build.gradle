@@ -1,4 +1,25 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.3.4'
+    }
+}
+
+publish {
+    userOrg = 'skyfe79'
+    groupId = 'kr.pe.burt.android.lib'
+    artifactId = 'androidchannel'
+    publishVersion = '0.0.1'
+    desc = 'AndroidChannel is helper library for thread communication between mainthread and workerthread'
+    website = 'https://github.com/skyfe79/AndroidChannel'
+    issueTracker = "${website}/issues"
+    repository = "${website}.git"
+}
 
 android {
     compileSdkVersion 23

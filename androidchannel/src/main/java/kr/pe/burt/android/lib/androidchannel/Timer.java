@@ -65,7 +65,6 @@ public class Timer {
 
     }
 
-
     public void start() {
         channel.toWorker().sendEmptyMessage(START_TIMER);
     }
