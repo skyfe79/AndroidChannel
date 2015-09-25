@@ -1,6 +1,10 @@
 # AndroidChannel
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidChannel-green.svg?style=flat)](https://android-arsenal.com/details/1/2547)
+
 AndroidChannel is helper library for inter thread communication between main thread and worker thread. AndroidChannel uses HandlerThread for inter thread communication.
+
+
 
 ## Setup Gradle
 
