@@ -81,7 +81,7 @@ public boolean onTouchEvent(MotionEvent event) {
 ## APIs
 
 * channel.open()
- * Use open() method to open channel. If you created a channel by Channel constructor, it is automatically open the channel by defaulty. 
+ * Use open() method to open channel. If you created a channel by Channel constructor, it is automatically open the channel by default. 
 * channel.close() 
  * Use close() method to close channel. close() method removes callbacks and messages in the message queue.
 * channel.toUI() 
