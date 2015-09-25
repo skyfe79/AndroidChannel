@@ -22,7 +22,7 @@ public class Timer {
         channel = new Channel(new Channel.UiCallback() {
             @Override
             public boolean handleUiMessage(Message msg) {
-                Timer.this.onTimer.onTimer(Timer.this);
+                Timer.this.onTimer.onTime(Timer.this);
                 return false;
             }
         }, new Channel.WorkerCallback() {
@@ -65,6 +65,7 @@ public class Timer {
 
     }
 
+
     public void start() {
         channel.toWorker().sendEmptyMessage(START_TIMER);
     }
@@ -87,6 +88,6 @@ public class Timer {
     }
 
     public interface OnTimer {
-        void onTimer(Timer timer);
+        void onTime(Timer timer);
     }
 }

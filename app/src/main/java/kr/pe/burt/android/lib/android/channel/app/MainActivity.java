@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         timer = new Timer(1000, new Timer.OnTimer() {
             int count = 0;
             @Override
-            public void onTimer(Timer timer) {
+            public void onTime(Timer timer) {
                 count++;
                 textView.setText("count : " + count);
                 if(count == 10) {
@@ -42,12 +42,10 @@ public class MainActivity extends AppCompatActivity {
         timer.start();
 
 
-
         channel = new Channel(new Channel.UiCallback() {
 
             @Override
             public boolean handleUiMessage(Message msg) {
-
                 if(msg.what == PING) {
                     Log.d("TAG", "PING");
                     channel.toWorker().sendEmptyMessageDelayed(PONG, 1000);
@@ -66,13 +64,20 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        channel.toUI().sendEmptyMessage(PING);
     }
 
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        channel.open();
+        channel.toUI().sendEmptyMessage(PING);
+    }
+
+    @Override
     protected void onPause() {
         super.onPause();
+        channel.close();
     }
 
     @Override

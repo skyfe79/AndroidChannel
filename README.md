@@ -11,7 +11,7 @@ AndroidChannel is helper library for inter thread communication between main thr
 ```groovy
 dependencies {
 	...
-    compile 'kr.pe.burt.android.lib:androidchannel:0.0.1'
+    compile 'kr.pe.burt.android.lib:androidchannel:0.0.2'
 }
 ```
 
@@ -54,7 +54,7 @@ If you use AndroidChannel, You can make Timer more easily. I already make Timer 
 timer = new Timer(1000, new Timer.OnTimer() {
     int count = 0;
     @Override
-    public void onTimer(Timer timer) {
+    public void onTime(Timer timer) {
         count++;
         textView.setText("count : " + count);
     }
@@ -77,6 +77,17 @@ public boolean onTouchEvent(MotionEvent event) {
     return super.onTouchEvent(event);
 }
 ```
+
+## APIs
+
+* channel.open()
+ * Use open() method to open channel. If you created a channel by Channel constructor, it is automatically open the channel by defaulty. 
+* channel.close() 
+ * Use close() method to close channel. close() method removes callbacks and messages in the message queue.
+* channel.toUI() 
+ * toUI() method returns main thread handler. If you want to send messages to ui thread you should use toUI() method.
+* channel.toWorker()
+ * toWorker() method returns worker thread handler. If you want to send messages to worker thread you should use toWorker() method.    	
 
 ## MIT License
 
