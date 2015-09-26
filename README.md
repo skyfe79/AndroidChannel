@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/skyfe79/AndroidChannel.svg?branch=master)](http://www.android-gems.com/lib/skyfe79/AndroidChannel)
+
 # AndroidChannel
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidChannel-green.svg?style=flat)](https://android-arsenal.com/details/1/2547)
