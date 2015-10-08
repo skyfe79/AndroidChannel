@@ -21,7 +21,7 @@ dependencies {
 
 ### AndroidChannel-ProgressLayout
 
-I hava reimplemented [ProgressLayout](https://github.com/iammert/ProgressLayout) by using AndroidChannel for example. You can check out souce code at [AndroidChannel-ProgressLayout](example/AndroidChannel-ProgressLayout). It shows how to use AndroidChannel when you want to implement a custom animatable view.
+I have reimplemented [ProgressLayout](https://github.com/iammert/ProgressLayout) by using AndroidChannel for example. You can check out souce code at [AndroidChannel-ProgressLayout](example/AndroidChannel-ProgressLayout). It shows how to use AndroidChannel when you want to implement a custom animatable view.
 
 ### Ping-Pong 
 
