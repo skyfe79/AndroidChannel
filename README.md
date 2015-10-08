@@ -1,3 +1,5 @@
+[![Android Gems](http://www.android-gems.com/badge/skyfe79/AndroidChannel.svg?branch=master)](http://www.android-gems.com/lib/skyfe79/AndroidChannel)
+
 # AndroidChannel
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-AndroidChannel-green.svg?style=flat)](https://android-arsenal.com/details/1/2547)
@@ -85,7 +87,7 @@ public boolean onTouchEvent(MotionEvent event) {
 ## APIs
 
 * channel.open()
- * Use open() method to open channel. If you created a channel by Channel constructor, it is automatically open the channel by defaulty. 
+ * Use open() method to open channel. If you created a channel by Channel constructor, it is automatically open the channel by default. 
 * channel.close() 
  * Use close() method to close channel. close() method removes callbacks and messages in the message queue.
 * channel.toUI() 
