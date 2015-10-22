@@ -13,7 +13,7 @@ AndroidChannel is helper library for inter thread communication between main thr
 ```groovy
 dependencies {
 	...
-    compile 'kr.pe.burt.android.lib:androidchannel:0.0.2'
+    compile 'kr.pe.burt.android.lib:androidchannel:0.0.3'
 }
 ```
 
@@ -28,7 +28,7 @@ I have reimplemented [ProgressLayout](https://github.com/iammert/ProgressLayout)
 You can make a channel between main thread and worker thread easily.
 
 ```java
-channel = new Channel(new Channel.UiCallback() {
+channel = new AndroidChannel(new AndroidChannel.UiCallback() {
     @Override
     public boolean handleUiMessage(Message msg) {
 
@@ -38,7 +38,7 @@ channel = new Channel(new Channel.UiCallback() {
         }
         return false;
     }
-}, new Channel.WorkerCallback() {
+}, new AndroidChannel.WorkerCallback() {
     @Override
     public boolean handleWorkerMessage(Message msg) {
 

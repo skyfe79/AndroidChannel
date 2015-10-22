@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-import kr.pe.burt.android.lib.androidchannel.Channel;
+import kr.pe.burt.android.lib.androidchannel.AndroidChannel;
 import kr.pe.burt.android.lib.androidchannel.Timer;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     TextView textView;
-    Channel channel;
+    AndroidChannel androidChannel;
     Timer timer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,24 +42,24 @@ public class MainActivity extends AppCompatActivity {
         timer.start();
 
 
-        channel = new Channel(new Channel.UiCallback() {
+        androidChannel = new AndroidChannel(new AndroidChannel.UiCallback() {
 
             @Override
             public boolean handleUiMessage(Message msg) {
                 if(msg.what == PING) {
                     Log.d("TAG", "PING");
-                    channel.toWorker().sendEmptyMessageDelayed(PONG, 1000);
+                    androidChannel.toWorker().sendEmptyMessageDelayed(PONG, 1000);
                 }
                 return false;
             }
-        }, new Channel.WorkerCallback() {
+        }, new AndroidChannel.WorkerCallback() {
 
             @Override
             public boolean handleWorkerMessage(Message msg) {
 
                 if(msg.what == PONG) {
                     Log.d("TAG", "PONG");
-                    channel.toUI().sendEmptyMessageDelayed(PING, 1000);
+                    androidChannel.toUI().sendEmptyMessageDelayed(PING, 1000);
                 }
                 return false;
             }
@@ -70,14 +70,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        channel.open();
-        channel.toUI().sendEmptyMessage(PING);
+        androidChannel.open();
+        androidChannel.toUI().sendEmptyMessage(PING);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        channel.close();
+        androidChannel.close();
     }
 
     @Override

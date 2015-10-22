@@ -9,23 +9,23 @@ public class Timer {
     private final int START_TIMER = 0;
     private final int STOP_TIMER  = 1;
 
-    private Channel channel;
+    private AndroidChannel androidChannel;
     private int interval=0;
     private OnTimer onTimer;
 
-    volatile  boolean loop = true;
+    volatile  boolean loop = false;
 
     public Timer(int interval, OnTimer onTimer) {
         this.interval = (interval < 0) ? (interval*-1) : (interval);
         this.onTimer = onTimer;
 
-        channel = new Channel(new Channel.UiCallback() {
+        androidChannel = new AndroidChannel(new AndroidChannel.UiCallback() {
             @Override
             public boolean handleUiMessage(Message msg) {
                 Timer.this.onTimer.onTime(Timer.this);
                 return false;
             }
-        }, new Channel.WorkerCallback() {
+        }, new AndroidChannel.WorkerCallback() {
 
 
             Thread jobThread = null;
@@ -33,14 +33,24 @@ public class Timer {
             @Override
             public boolean handleWorkerMessage(Message msg) {
 
-                if(jobThread == null) {
+                switch (msg.what) {
+                    case START_TIMER:
+                        loop = true;
+                        break;
+                    case STOP_TIMER:
+                        loop = false;
+                        jobThread = null;
+                        break;
+                }
+
+                if(msg.what == START_TIMER && jobThread == null) {
                     jobThread = new Thread(new Runnable() {
                         @Override
                         public void run() {
                             while (loop) {
                                 try {
-                                    Message msg = channel.toUI().obtainMessage();
-                                    channel.toUI().sendMessage(msg);
+                                    Message msg = androidChannel.toUI().obtainMessage();
+                                    androidChannel.toUI().sendMessage(msg);
                                     Thread.sleep(Timer.this.interval);
                                 } catch (InterruptedException e) {
                                 }
@@ -59,6 +69,8 @@ public class Timer {
                         jobThread = null;
                         break;
                 }
+
+
                 return false;
             }
         });
@@ -67,11 +79,11 @@ public class Timer {
 
 
     public void start() {
-        channel.toWorker().sendEmptyMessage(START_TIMER);
+        androidChannel.toWorker().sendEmptyMessage(START_TIMER);
     }
 
     public void stop() {
-        channel.toWorker().sendEmptyMessage(STOP_TIMER);
+        androidChannel.toWorker().sendEmptyMessage(STOP_TIMER);
     }
 
 
