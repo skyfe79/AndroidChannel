@@ -14,7 +14,7 @@ publish {
     userOrg = 'skyfe79'
     groupId = 'kr.pe.burt.android.lib'
     artifactId = 'androidchannel'
-    publishVersion = '0.0.3'
+    publishVersion = '0.0.4'
     desc = 'AndroidChannel is helper library for thread communication between mainthread and workerthread'
     website = 'https://github.com/skyfe79/AndroidChannel'
     issueTracker = "${website}/issues"
@@ -28,8 +28,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 3
-        versionName "0.0.3"
+        versionCode 4
+        versionName "0.0.4"
     }
     buildTypes {
         release {

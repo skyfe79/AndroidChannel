@@ -13,7 +13,7 @@ AndroidChannel is helper library for inter thread communication between main thr
 ```groovy
 dependencies {
 	...
-    compile 'kr.pe.burt.android.lib:androidchannel:0.0.3'
+    compile 'kr.pe.burt.android.lib:androidchannel:0.0.4'
 }
 ```
 
