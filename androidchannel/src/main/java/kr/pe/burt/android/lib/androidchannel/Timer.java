@@ -49,9 +49,9 @@ public class Timer {
                         public void run() {
                             while (loop) {
                                 try {
+                                    Thread.sleep(Timer.this.interval);
                                     Message msg = androidChannel.toUI().obtainMessage();
                                     androidChannel.toUI().sendMessage(msg);
-                                    Thread.sleep(Timer.this.interval);
                                 } catch (InterruptedException e) {
                                 }
                             }
