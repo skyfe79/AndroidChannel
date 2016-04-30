@@ -77,7 +77,7 @@ public class AndroidChannel {
             }
         });
 
-        workerThread = new HandlerThread("channel-worker-thread");
+        workerThread = new HandlerThread("android-channel-worker-thread");
         workerThread.start();
         workerThreadHandler = new Handler(workerThread.getLooper(), new Handler.Callback() {
             @Override
